@@ -520,7 +520,7 @@ button:hover{
     left: 30%;
     width: 2.5vw;
     height: 2.5vw;
-    animation-delay: 2.2s;
+    animation-delay: 2.25s;
   }
   
   #star3 {
@@ -528,7 +528,7 @@ button:hover{
     left: 24%;
     width: 5vw;
     height: 5vw;
-    animation-delay: 2.25s;
+    animation-delay: 2.5s;
   }
   
   #star4 {
@@ -551,7 +551,7 @@ button:hover{
     left: 62%;
     width: 7.5vw;
     height: 7.5vw;
-    animation-delay: 2.25s;
+    animation-delay: 2.5s;
   }
   
   #star7 {
@@ -566,7 +566,7 @@ button:hover{
     left: 72%;
     width: 8vw;
     height: 8vw;
-    animation-delay: 2.3s;
+    animation-delay: 2.4s;
   }
 
 /* ----- Trophy Entrance ----- */
