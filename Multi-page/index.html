@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Rock Paper Scissors</title>
+        <meta name="description" content="JS Module 1 Project by Sumit Kumar, Cuvette PGP JULY'24">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Dangrek' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <header>
+            <section class="headerbox">
+                <div class="logo"><p>ROCK PAPER SCISSORS</p></div>
+                <div class="scoreboard">
+                    <div class="scores"><p class="identifier">COMPUTER SCORE</p><p class="count" id="computer_score">0</p></div>
+                    <div class="scores"><p class="identifier">YOUR <br> SCORE</p><p class="count" id="your_score">0</p></div>
+                </div>
+            </section>
+        </header>
+        <main id="default">
+            <div id="gamearea">
+            <button class="game" id="rock"><img src="./images/rock.png" alt="rock"></button>
+            <div class="line l1"></div>
+            <button class="game" id="scissor" ><img src="./images/scissor.png" alt="scissor"></button>
+            <div class="line l2"></div>
+            <button class="game" id="paper"><img src="./images/paper.png" alt="paper"></button>
+            <div class="line l3"></div>
+            </div>
+            <button id="rules">RULES</button>
+            <section id="rulebox">
+                <h2>Game Rules</h2>
+                <ul>
+                    <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                    <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+                    <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
+                    <li>If both players lay down the same hand, each player lays down another hand</li>
+                </ul>
+            </section>
+            <button id="close">X</button>
+        </main>
+        <script src="script.js" async defer></script>
+    </body>
+</html>

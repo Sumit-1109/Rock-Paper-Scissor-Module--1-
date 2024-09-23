@@ -1,0 +1,323 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    background-color: #8cc461;
+    width: 99vw;
+    height: 99vh;
+    overflow: hidden;
+
+}
+
+header{
+    width: 100vw;
+    height: 33vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerbox{
+    border: 2px solid rgba(255, 255, 255, 1);
+    border-radius: 13px;
+    height: 80%;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1%;
+}
+
+.logo{
+    height: 100%;
+    width: 25%;
+    font-family: "Roboto";
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 2.5rem;
+    letter-spacing: 0.1em;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+}
+.scoreboard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 40%;
+}
+
+.scores{
+    background-color: rgba(255, 255, 255, 1);
+    width: 45%;
+    height: 100%;
+    border-radius: 13px;
+    text-align: center;
+    padding-top: 1.5%;
+}
+
+.identifier{
+    color: rgba(101, 101, 101, 1);
+    font-family: "Roboto";
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    letter-spacing: 0.1em;
+}
+
+.count{
+    font-family: "Roboto";
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 4.5rem;
+    text-align: center;
+}
+#win{
+    height: 65vh;
+    width: 95vw;
+    margin: auto;
+    position: relative;
+}
+.resultarea{
+    height: 100%;
+    width: 60%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    position: relative;
+}
+.result{
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.picked-label{
+    width: 100%;
+    position: absolute;
+    top: 15vh;
+    text-align: center;
+    font-size: 1rem;
+    z-index: 5;
+    font-family: "Roboto";
+    font-weight: 600;
+    line-height: 1.5rem;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 1);
+}
+.game {
+    width: 10vw; 
+    height: 10vw; 
+    border-radius: 50%;
+    box-shadow: 3px 0px 21px 1px rgba(0, 0, 0, 0.2) inset;
+    background: rgba(255, 255, 255, 1);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.circle1{
+    width: 14vw;
+    height: 14vw;
+    background: #279b27;
+    animation: highlightanimate 2s infinite cubic-bezier(0.36, 0.11, .89, .32);
+}
+.circle2{
+    width: 12vw;
+    height: 12vw;
+    background: #32a62f;
+    animation: highlightanimate 2s infinite cubic-bezier(0.36, 0.11, .89, .32);
+    animation-delay: 0.2s;
+}
+.circle3{
+    width: 10vw;
+    height: 10vw;
+    background: rgba(46, 154, 37, 0.39);
+    animation: highlightanimate 2s infinite cubic-bezier(0.36, 0.11, .89, .32);
+    animation-delay: 0.4s;
+}
+
+.highlight{
+    border-radius: 50%;
+    box-shadow: 0px 1px 62px 0px rgba(0, 0, 0, 0.13);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@keyframes highlightanimate {
+    from {
+        transform: translate(-50%, -50%) scale(0.5); 
+        opacity: 0.5;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(2.5); 
+        opacity: 0;
+    }
+} 
+
+
+#rock {
+    border: 2vw solid rgba(0, 116, 182, 1);
+    grid-area: 1/1/2/2;
+    margin-right: 10px;
+}
+
+#paper {
+    border: 2vw solid rgba(255, 169, 67, 1);
+    grid-area: 2/2/3/3;
+}
+
+#scissor {
+    border: 2vw solid rgba(189, 0, 255, 1);
+    grid-area: 1/3/2/3;
+}
+
+#rules{
+    position: absolute;
+    width: 10vw;
+    height: 8vh;
+    bottom: 1vh;
+    right: 1vw;
+    background-color: rgba(217, 217, 217, 0);
+    border: 2px solid rgba(255, 255, 255, 1);
+    border-radius: 13px;
+    color: rgba(255, 255, 255, 1);
+    font-family: "Roboto";
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2rem;
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+
+#rulebox{
+    display: none;
+    background: rgba(0, 68, 41, 1);
+    border: 7px solid rgba(255, 255, 255, 1);
+    border-radius: 13px;
+    position: absolute;
+    bottom: 10vh;
+    right: 1.3vw;
+    width: 21vw;
+    height: 53vh;
+    font-family: "Roboto";
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1rem;
+    text-align: left;
+    padding: 1% 1.2% 0 2%;
+    color: rgba(255, 255, 255, 1);
+}
+
+h2{
+    font-family: "Roboto";
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 2.5rem;
+    text-align: left;   
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+#close{
+    display: none;
+    position: absolute;
+    bottom: 59vh;
+    right: 0.5vw;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    background: rgba(255, 0, 0, 1);
+    border: 5px solid rgba(255, 255, 255, 1);
+    justify-content: center;
+    align-items: center;
+    font-family: "Dangrek";
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 2.5rem;
+    text-align: center;
+}
+ul{
+    list-style: square;
+}
+ul li{
+    margin-bottom: 5%;
+}
+li::marker{
+    color: rgba(255, 214, 0, 1);
+}
+button{
+    cursor: pointer;
+}
+
+.next{
+    position: absolute;
+    width: 10vw;
+    height: 8vh;
+    bottom: 1vh;
+    right: 1vw;
+    background-color: rgba(217, 217, 217, 0);
+    border: 2px solid rgba(255, 255, 255, 1);
+    border-radius: 13px;
+    color: rgba(255, 255, 255, 1);
+    font-family: "Roboto";
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2rem;
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+
+#result{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.winner{
+    height: 50%;
+    width: 90%;
+    color: rgba(255, 255, 255, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#outcome{
+    font-family: 'Roboto';
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 2.5rem;
+    letter-spacing: 0.1em;
+    margin-bottom: -8%;
+}
+#against{
+    font-family: 'Roboto';
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.8rem;
+    letter-spacing: 0.1em;
+}
+#playagain{
+    background: rgba(255, 255, 255, 1);
+    border: none;
+    font-family: 'Roboto';
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.1rem;
+    letter-spacing: 0.1em;
+    width: 70%;
+    height: 25%;
+    color: rgba(107, 107, 107, 1);
+    border-radius: 13px;
+}
+

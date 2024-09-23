@@ -1,0 +1,690 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgba(140,196,97,255);
+    /* overflow: hidden; */
+}
+.rockpaperscissor{
+    display: block;
+}
+
+/* ---------------------- FONT CLASSES ---------------------- */
+.roboto-light {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .roboto-medium {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .roboto-black {
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  .dangrek-regular {
+    font-family: "Dangrek", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  
+/* ---------------------- HEADER (SCOREBOARD) ---------------------- */
+#scoreboard{
+    height: 30vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.scoreboard{
+    height: 85%;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 13px;
+    background: rgba(28, 48, 120, 0);
+    border: 1.5px solid rgba(255, 255, 255, 1);
+}
+
+.logo{
+    height: 90%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 3%;
+}
+.scorecard{
+    height: 90%;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 3%;
+}
+.card{
+    height: 100%;
+    width: 45%;
+    background: rgba(255, 255, 255, 1);
+    font-family: "Roboto";
+    font-size: 1rem;
+    line-height: 1.2rem;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    color: rgba(101, 101, 101, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 13px;
+}
+
+.score{
+    font-size: 4.3rem;
+    line-height: 4.8rem;
+    text-align: center;
+    color: rgba(37, 37, 37, 1);
+    margin-bottom: -10%;
+}
+
+.logoText{
+    font-size: 2.5rem;
+    line-height: 2.75rem;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 1);
+}
+
+#gameplay{
+    height: 68vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ---------------------- Initial Page ---------------------- */
+
+#choicesArea{
+    height: 70%;
+    width: 30%;
+    /* display: grid; */
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: auto auto;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+}
+#rock{
+    grid-area: 1/1/2/2;
+    border: 16px solid rgba(0, 116, 182, 1)
+}
+#paper{
+    grid-area:2/1/3/4;
+    border: 16px solid rgba(255, 169, 67, 1)
+}
+#scissor{
+    grid-area: 1/3/2/4;
+    border: 16px solid rgba(189, 0, 255, 1)
+}
+
+.choices{
+    width: 8vw;
+    height: 8vw;
+    border-radius: 50%;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 1);
+    animation: choices 1s cubic-bezier(0.37, 0, 0.63, 1) 0s infinite normal none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes choices {
+    0% {
+      transform: scale(1);
+      box-shadow: -1px 1px 11px 0px rgba(0, 0, 0, 0.35);
+    }
+  
+    50% {
+      transform: scale(1.05);
+      box-shadow: -5px 5px 16px 4px rgba(0, 0, 0, 0.35);
+    }
+  
+    100% {
+      transform: scale(1);
+      box-shadow: -1px 1px 11px 0px rgba(0, 0, 0, 0.35);
+    }
+  }
+  
+  
+img{
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+.line{
+    position: absolute;
+    z-index: 1;
+    width: 15vw;
+    height: 0vw;
+    border: 0.5vw solid rgba(0, 0, 0, 0.64);
+}
+.l1{
+    left: 10%;
+    transform: rotate(60deg);
+}
+.l2{
+    left: 40%;
+    transform: rotate(120deg);
+}
+.l3{
+    top: 25%;
+    transform: rotate(0deg);
+}
+
+
+/* ---------------------- RULE BOX ---------------------- */
+
+.functionButton{
+    position: absolute;
+    width: 10vw;
+    height: 8vh;
+    background-color: rgba(217, 217, 217, 0);
+    border: 2px solid rgba(255, 255, 255, 1);
+    border-radius: 13px;
+    color: rgba(255, 255, 255, 1);
+    font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: 0.1em;
+    text-align: center;
+    cursor: pointer;
+}
+.before{
+    bottom: 5vh;
+    right: 3vw;
+}
+
+#rulebox{
+    display: none;
+    background: rgba(0, 68, 41, 1);
+    border: 7px solid rgba(255, 255, 255, 1);
+    border-radius: 13px;
+    position: absolute;
+    bottom: 15vh;
+    right: 3vw;
+    width: 21vw;
+    height: 53vh;
+    font-size: 0.8rem;
+    line-height: 1rem;
+    text-align: left;
+    padding: 1% 1.2% 0 2%;
+    color: rgba(255, 255, 255, 1);
+}
+
+h2{
+    font-size: 2rem;
+    line-height: 2.5rem;
+    text-align: left;   
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+#close{
+    display: none;
+    position: absolute;
+    bottom: 65vh;
+    right: 2vw;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    background: rgba(255, 0, 0, 1);
+    border: 5px solid rgba(255, 255, 255, 1);
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    text-align: left;
+    z-index: 10;
+    color: rgba(255, 255, 255, 1);
+}
+ul{
+    list-style: square;
+}
+ul li{
+    margin-bottom: 5%;
+    position: relative;
+}
+li::marker{
+    color: rgba(255, 214, 0, 1);
+}
+button{
+    cursor: pointer;
+}
+
+
+
+/* ---------------------- RESULT PAGE ---------------------- */
+/* -----Middle Container----- */
+#resultArea{
+    /* display: grid; */
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    width: 55vw;
+    height: 50vh;
+}
+.resultDivisions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+#result{
+    width: 100%;
+    height: 13vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+#result p{
+    letter-spacing: 0.15rem;
+    color:rgba(255, 255, 255, 1);
+}
+#outcome{
+    font-size: 2.43rem;
+    line-height: 2.85rem;
+}
+#against{
+    font-size: 1.5rem;
+    line-height: 1.83rem;
+}
+#playAgain{
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    width: 85%;
+    height: 25%;
+    margin-top: 10%;
+    border-radius: 13px;
+    border: none;
+    color: rgba(107, 107, 107, 1);
+    background-color: rgba(255, 255, 255, 1);
+}
+button:hover{
+    scale: 1.1;
+}
+/* ------------- Side Containers ------------- */
+.resultDivisions{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.label{
+    width: 100%;
+    position: absolute;
+    top: 15%;
+    text-align: center;
+    font-size: 1rem;
+    z-index: 10;
+    line-height: 1.245rem;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 1);
+}
+
+/* ------------- Winner Effect ------------- */
+.winner {
+    width: 10vw;
+    height: 10vw;
+    z-index: 20;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.highlight {
+    width: 10vw;
+    height: 10vw;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0px 1px 62px 0px rgba(0, 0, 0, 0.13);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulseOut 1.5s infinite cubic-bezier(0.36, 0.11, .89, .32);
+}
+
+.circle1, .circle2,.circle3,.circle4,.circle5,.circle6{
+    background-color: rgba(29, 168, 43, 0.79);
+}
+.circle1 {
+    animation-delay: 0s;
+}
+
+.circle2 {
+    animation-delay: 0.25s;
+}
+
+.circle3 {
+    animation-delay: 0.5s;
+}
+
+.circle4 {
+    animation-delay: 0.75s;
+}
+
+.circle5 {
+    animation-delay: 1s;
+}
+
+.circle6 {
+    animation-delay: 1.25s;
+}
+
+@keyframes pulseOut {
+    from {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 5;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(2.5);
+        opacity: 0.1;
+    }
+}
+
+/* ------------- Next Button ------------- */
+
+.after{
+    bottom: 5vh;
+    right: 15vw;
+}
+
+#nextButton{
+    display: none;
+}
+
+/* ---------------------- AWARD PAGE ---------------------- */
+#awardArea {
+    background-color: #8cc461;
+    display: none;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center; 
+    height: 100vh;
+    width: 100vw;
+}
+#award {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* ------------- Trophy Area ------------- */
+#trophyArea {
+    position: relative;
+    width: 50vw;
+    height: 55vh;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    margin-bottom: -10vh;
+    margin-top: -2vh;
+
+}
+
+/* ----- Stars ----- */
+.star {
+    position: absolute;
+    z-index: 0;
+    opacity: 0;
+    animation: swirlEntrance 1.5s ease-out forwards 2s, star 2s ease infinite 2s;
+}
+
+@keyframes swirlEntrance {
+    0% {
+        top: 40%;
+        left: 42%;
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        top: 40%;
+        left: 42%;
+        transform: translate(-50%, -35%) scale(1.2) rotate(60deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%,-50%) scale(1) rotate(360deg);
+    }
+}
+  
+
+  @keyframes star {
+    0% {
+        transform: translate(0) scale(1);
+        opacity: 1;
+    }
+    50%{
+        transform: translate(0, 10px) scale(0.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(0) scale(1);
+        opacity: 2;
+    }
+  }
+  
+  
+  #star1 {
+    top: 18%;
+    left: 47%;
+    width: 2.5vw;
+    height: 2.5vw;
+  }
+  
+  #star2 {
+    top: 8%;
+    left: 30%;
+    width: 2.5vw;
+    height: 2.5vw;
+  }
+  
+  #star3 {
+    top: 21%;
+    left: 24%;
+    width: 5vw;
+    height: 5vw;
+  }
+  
+  #star4 {
+    top: 40%;
+    left: 15%;
+    width: 7.5vw;
+    height: 7.5vw;
+  }
+  
+  #star5 {
+    top: 75%;
+    left: 32%;
+    width: 2.5vw;
+    height: 2.5vw;
+  }
+  
+  #star6 {
+    top: 8%;
+    left: 62%;
+    width: 7.5vw;
+    height: 7.5vw;
+  }
+  
+  #star7 {
+    top: 32%;
+    left: 80%;
+    width: 2.5vw;
+    height: 2.5vw;
+  }
+  
+  #star8 {
+    top: 50%;
+    left: 72%;
+    width: 8vw;
+    height: 8vw;
+  }
+
+/* ----- Trophy Entrance ----- */
+.trophy {
+    position: relative;
+    z-index: 2;
+    width: 15vw;
+    height: 15vw;
+    margin-bottom: 5%;
+    animation: myAnim 2s ease 0s 1 normal forwards;
+}
+
+@keyframes myAnim {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 0;
+		transform: translateY(-250px);
+	}
+
+	38% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	55% {
+		animation-timing-function: ease-in;
+		transform: translateY(-65px);
+	}
+
+	72% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+
+	81% {
+		animation-timing-function: ease-in;
+		transform: translateY(-28px);
+	}
+
+	90% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+
+	95% {
+		animation-timing-function: ease-in;
+		transform: translateY(-8px);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+}
+
+.trophy img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* ------------- Play Again Button ------------- */
+#awardPlayAgain {
+    background: rgba(255, 255, 255, 1);
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.1rem;
+    letter-spacing: 0.1em;
+    width: 12vw;
+    height: 8vh;
+    color: rgba(107, 107, 107, 1);
+    border-radius: 13px;
+    margin-top: 5vh;
+    cursor: pointer;
+    transition: 0.3s;
+    bottom: -5vh;
+}
+
+#awardPlayAgain:hover {
+    transform: scale(1.2);
+}
+
+/* ---------- Award Page Text Area ---------- */
+.textArea{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: visible;
+}
+
+.congratulations{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 1);
+}
+.hurray{
+    font-size: 5.65rem;
+    line-height: 6.5rem;
+    letter-spacing: 0.1rem;
+}
+.sub-text{
+    font-size: 2.5rem;
+    line-height: 3rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 8vh;
+}
+
+
+/* ---------------------- Media Queries ---------------------- */
+@media only screen and (min-width: 2500px) {
+    html{
+        font-size: 30px;
+    }
+}
+
+@media only screen and (min-width: 1500px) and (max-width:2500px) {
+    html{
+        font-size: 25px;
+    }
+}

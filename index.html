@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Rock Paper Scissor</title>
+        <meta name="description" content="Cuvette PGP JS Module 1 Project">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="icon" href="./images/rock-paper-scissors.png" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dangrek&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+
+        <!-- ------------ HEADER AREA (SCOREBOARD) ------------ -->
+        <section id="rockpaperscissor">
+            <header id="scoreboard">
+                <div class="scoreboard">
+                    <div class="logo">
+                        <div class="logoText roboto-medium">ROCK</div>
+                        <div class="logoText roboto-medium">PAPER</div>
+                        <div class="logoText roboto-medium">SCISSORS</div>
+                    </div>
+                    <div class="scorecard">
+                        <div class="card">
+                            <div class="player roboto-medium">COMPUTER</div>
+                            <div class="scoreText roboto-bold">SCORE</div>
+                            <div class="score roboto-bold" id="pcScore">0</div>
+                        </div>
+                        <div class="card">
+                            <div class="player roboto-medium">YOUR</div>
+                            <div class="scoreText roboto-bold">SCORE</div>
+                            <div class="score roboto-bold" id="userScore">0</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main id="gameplay">
+                <!------------ Initial Page ------------>
+                <div id="choicesArea">
+                    <div class="line l1"></div>
+                    <div class="line l2"></div>
+                    <div class="line l3"></div>
+                    <button class="choices" id="rock"><img src="./images/rock.png" alt="rock"></button>
+                    <button class="choices" id="scissor"><img src="./images/scissor.png" alt="paper"></button>
+                    <button class="choices" id="paper"><img src="./images/paper.png"alt="scissor"></button>
+                </div>
+    
+                <!-- ------------ Result Page ------------ -->
+                 <div id="resultArea">
+                    <div class="resultDivisions" id="user">
+                    </div>
+                    <div class="resultDivisions">
+                        <div id="result">
+                            <p id="outcome" class="roboto-black">YOU LOST</p>
+                            <p id="against" class="roboto-black">AGAINST PC</p>
+                            <button id="playAgain" class="roboto-medium">PLAY AGAIN</button>
+                        </div>
+                    </div>
+                    <div class="resultDivisions" id="pc">
+                    </div>
+                 </div>
+                <button class="roboto-medium functionButton before" id="nextButton">NEXT</button>
+            </main>
+        </section>
+
+        <!-- ------------ Award Page ------------ -->
+        <section id="awardArea">
+            <main id="award">
+                <section id="trophyArea">
+                    <div class="trophy"><img src="./images/Vector.png" alt="trophy" id="trophy"></div>
+                </section>
+                <section class="textArea">
+                <div class="congratulations">
+                    <div class="hurray roboto-medium">HURRAY!!</div>
+                    <div class="sub-text roboto-medium">YOU WON THE GAME</div>
+                </div>
+                <button class="roboto-medium" id="awardPlayAgain">PLAY AGAIN</button>
+                </section>
+                
+            </main>
+        </section>
+
+        <!-- ------------ Rule Box ------------ -->
+        <button class="roboto-medium functionButton before" id="rules">RULES</button>
+        <button id="close" class="dangrek-regular">X</button>
+        <section id="rulebox">
+            <h2 class="roboto-regular">Game Rules</h2>
+            <ul class="roboto-light">
+                <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+                <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
+                <li>If both players lay down the same hand, each player lays down another hand</li>
+            </ul>
+        </section>
+
+        <script src="index.js" async defer></script>
+    </body>
+</html>
